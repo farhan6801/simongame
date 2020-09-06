@@ -11,6 +11,56 @@ body {
     width: 100%;
 }
 
+.start {
+    height: 50px;
+    width: 200px;
+	box-shadow: 0px 0px 0px 2px #9fb4f2;
+	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+	background-color:#7892c2;
+	border-radius:10px;
+	border:1px solid #4e6096;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:25px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
+}
+.start:hover {
+	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+	background-color:#476e9e;
+}
+.start:active {
+	position:relative;
+	top:1px;
+}
+
+.restart {
+    height: 50px;
+    width: 200px;
+	box-shadow: 0px 0px 0px 2px #9fb4f2;
+	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+	background-color:#7892c2;
+	border-radius:10px;
+	border:1px solid #4e6096;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:25px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
+}
+.restart:hover {
+	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+	background-color:#476e9e;
+}
+.restart:active {
+	position:relative;
+    top:1px;
+}
+
 h1 {
     font-size: 4rem;
     letter-spacing: 1.5px;
@@ -40,7 +90,7 @@ button {
     outline: none;
 }
 
-.red {
+#red {
     background-color: red;
     border-top: 4px solid black;
     border-right: 2px solid black;
@@ -49,7 +99,7 @@ button {
     border-top-left-radius: 100%;
 }
 
-.yellow {
+#yellow {
     background-color: yellow;
     border-top: 2px solid black;
     border-right: 4px solid black;
@@ -58,7 +108,7 @@ button {
     border-bottom-right-radius: 100%;
 }
 
-.blue {
+#blue {
     background-color: blue;
     border-top: 2px solid black;
     border-right: 2px solid black;
@@ -67,7 +117,7 @@ button {
     border-bottom-left-radius: 100%;
 }
 
-.green {
+#green {
     background-color: green;
     border-top: 4px solid black;
     border-right: 4px solid black;
