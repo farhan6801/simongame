@@ -10,18 +10,22 @@ var level = 0;
 function sequence() {
     var randomNumber = Math.floor(Math.random() * 4);
     var firstColor = simonColors[randomNumber];
-    $("." + firstColor).fadeOut(200).fadeIn(200);
+    $("#" + firstColor).fadeOut(200).fadeIn(200);
     selectedColors.push(firstColor);
+    var sequenceSound = new Audio("sounds/sequence.wav");
+    sequenceSound.play();
 }
 
 function animatePress(currentColor) {
-  $("." + currentColor).addClass("clicked");
-  setTimeout(function () {
-    $("." + currentColor).removeClass("clicked");
-  }, 200);
+    var clickSound = new Audio("sounds/click.wav");
+    clickSound.play();
+    $("#" + currentColor).addClass("clicked");
+    setTimeout(function () {
+        $("#" + currentColor).removeClass("clicked");
+    }, 200);
 }
 
-$(document).on("keypress", function () {
+$(".start").on("click", function () {
     if (gameStart === false) {
         sequence();
         level++;
@@ -31,9 +35,9 @@ $(document).on("keypress", function () {
     }
 });
 
-$("button").on("click", function () {
+$(".btn").on("click", function () {
     if (gameStart === true) {
-        var userClickColor = $(this).attr("class");
+        var userClickColor = $(this).attr("id");
         animatePress(userClickColor);
         clickedPattern.push(userClickColor);
 
@@ -47,12 +51,17 @@ $("button").on("click", function () {
         }
 
         if (arraysMatch(clickedPattern, selectedColors) === false) {
+            var endSound = new Audio("sounds/gameover.mp3");
+            endSound.play();
             $(".game_text").text("GAME OVER!");
             $("button").fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
             $(".game_text").fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
-            $(".reset").text("Press any key to RESTART.");
-            $(document).on("keypress", function () {
-                gameStart = false;
+            $(".start").text("RESTART");
+            $(".start").addClass("restart");
+            $(".restart").removeClass("start");
+            gameStart = false;
+            
+            $(".restart").on("click", function () {
                 location.reload();
             });
         }  
