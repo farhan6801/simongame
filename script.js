@@ -22,7 +22,7 @@ function animatePress(currentColor) {
     $("#" + currentColor).addClass("clicked");
     setTimeout(function () {
         $("#" + currentColor).removeClass("clicked");
-    }, 200);
+    }, 100);
 }
 
 $(".start").on("click", function () {
@@ -47,7 +47,7 @@ $(".btn").on("click", function () {
                 level++;
                 $(".game_text").text("LEVEL " + level);
                 clickedPattern = [];
-            }, 400);
+            }, 500);
         }
 
         if (arraysMatch(clickedPattern, selectedColors) === false) {
